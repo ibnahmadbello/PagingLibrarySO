@@ -47,7 +47,7 @@ public class ItemDataSource extends PageKeyedDataSource<Integer, Item> {
                 .getAnswers(params.key, PAGE_SIZE, SITE_NAME)
                 .enqueue(new Callback<StackApiResponse>() {
                     @Override
-                    public void onResponse(Call<StackApiResponse> call, Response<StackApiResponse> response) {
+                    public void onResponse(@NonNull Call<StackApiResponse> call, @NonNull Response<StackApiResponse> response) {
                         // if the page number is greater than one
                         // we are decrementing the page number
                         // else there is no previous page
@@ -60,7 +60,7 @@ public class ItemDataSource extends PageKeyedDataSource<Integer, Item> {
                     }
 
                     @Override
-                    public void onFailure(Call<StackApiResponse> call, Throwable t) {
+                    public void onFailure(@NonNull Call<StackApiResponse> call, @NonNull Throwable t) {
 
                     }
                 });
@@ -74,7 +74,7 @@ public class ItemDataSource extends PageKeyedDataSource<Integer, Item> {
                 .getAnswers(params.key, PAGE_SIZE, SITE_NAME)
                 .enqueue(new Callback<StackApiResponse>() {
                     @Override
-                    public void onResponse(Call<StackApiResponse> call, Response<StackApiResponse> response) {
+                    public void onResponse(@NonNull Call<StackApiResponse> call, @NonNull Response<StackApiResponse> response) {
                         if (response.body() != null){
                             // if the response has next page
                             // incrementing the next page number
@@ -86,7 +86,7 @@ public class ItemDataSource extends PageKeyedDataSource<Integer, Item> {
                     }
 
                     @Override
-                    public void onFailure(Call<StackApiResponse> call, Throwable t) {
+                    public void onFailure(@NonNull Call<StackApiResponse> call, @NonNull Throwable t) {
 
                     }
                 });
